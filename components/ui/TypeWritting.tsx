@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { ColorPicker } from "./color";
 
 interface TypewriterEffectProps {
   textList: string[]; // multiple texts
@@ -9,6 +10,7 @@ interface TypewriterEffectProps {
   deletingSpeed?: number;
   pauseTime?: number;
   className?: string;
+  style?: React.CSSProperties;
   cursorClassName?: string;
 }
 
@@ -19,6 +21,7 @@ const TypewriterEffect: React.FC<TypewriterEffectProps> = ({
   pauseTime = 1500,
   className = "",
   cursorClassName = "",
+  style={}
 }) => {
   const [text, setText] = useState("");
   const [index, setIndex] = useState(0);
@@ -50,6 +53,7 @@ const TypewriterEffect: React.FC<TypewriterEffectProps> = ({
 
   return (
     <div
+    style={style}
       className={`text-2xl sm:text-3xl md:text-4xl font-semibold ${className}`}
     >
       <motion.span
@@ -68,7 +72,8 @@ const TypewriterEffect: React.FC<TypewriterEffectProps> = ({
           repeat: Infinity,
           repeatType: "reverse",
         }}
-        className={`ml-1 inline-block w-[3px] h-6 sm:h-8 bg-blue-500 ${cursorClassName}`}
+        style={{backgroundColor:ColorPicker.primary}}
+        className={`ml-1 inline-block w-[3px] h-6 sm:h-8  ${cursorClassName}`}
       ></motion.span>
     </div>
   );

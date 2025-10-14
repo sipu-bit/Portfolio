@@ -1,45 +1,28 @@
-"use client";
-import React from "react";
+'use client';
+import React from 'react';
 
-export default function MovingButton() {
-  const customCss = `
-    /* Define a smoothly animatable custom property */
-    @property --angle {
-      syntax: '<angle>';
-      initial-value: 0deg;
-      inherits: false;
-    }
+interface ButtonProps {
+  text: string;
+  className?: string; // optional className
+}
 
-    /* Rotate the angle for shimmer animation */
-    @keyframes shimmer-spin {
-      to {
-        --angle: 360deg;
-      }
-    }
-  `;
-
+export default function HoverButton({ text, className = '' }: ButtonProps) {
   return (
-    <div className="flex items-center justify-center font-sans">
-      <style>{customCss}</style>
+    <button
+      className={`group relative overflow-hidden border-2 border-[#00ffaa] text-[#00ffaa] font-medium rounded-md w-32 h-10 text-base transition-colors duration-500 ${className}`}
+    >
+      {/* Animated background */}
+      <span className="absolute top-full left-full w-[200px] h-[150px] bg-[#00ffaa] rounded-full transition-all duration-700 pointer-events-none group-hover:-top-7 group-hover:-left-7"></span>
 
-      <button
-        className="relative inline-flex items-center justify-center p-[1.5px] rounded-md overflow-hidden group"
-      >
-        {/* Animated conic gradient border */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "conic-gradient(from var(--angle), transparent 25%, #06b6d4, transparent 50%)",
-            animation: "shimmer-spin 2.5s linear infinite",
-          }}
-        />
+      {/* Button text */}
+      <span className="relative z-10">{text}</span>
 
-        {/* Button inner content */}
-        <span className="relative z-10 inline-flex items-center justify-center px-8 py-2 text-gray-100 dark:text-white bg-[#024038] dark:bg-gray-900 rounded-md group-hover:bg-[#3e3e3e] dark:group-hover:bg-gray-800 transition-colors duration-300">
-          Contact Me
-        </span>
-      </button>
-    </div>
+      {/* Hover text color (optional with Tailwind) */}
+      <style jsx>{`
+        button:hover {
+          color: rgba(28, 27, 27, 0.5);
+        }
+      `}</style>
+    </button>
   );
 }

@@ -5,10 +5,11 @@ import { LuFacebook } from "react-icons/lu";
 import { IoLogoGithub } from "react-icons/io5";
 import Link from "next/link";
 import MovingButton from "../ui/MovingButton";
+import { ColorPicker } from "../ui/color";
 
 export default function Profile(){
     return(
-        <div className="text-white bg-[#1c1c1c] w-full border border-[#3e3e3e] rounded-xl h-[85vh]">
+        <div style={{backgroundColor:ColorPicker.bg}} className="text-white w-full border border-[#3e3e3e] rounded-xl h-auto pb-16">
           <div className="w-full p-4">
             <Image src='/my-image.jpg' alt="profile" width={100} height={100} className="w-full h-auto rounded-xl border border-[#3e3e3e]"/>
           </div>
@@ -23,7 +24,7 @@ export default function Profile(){
           </div>
           <div className="flex gap-2 justify-center pt-6 items-center">
             <Link href='/' className="py-2 px-6 bg-[#3e3e3e] rounded-md">DownLoad CV</Link>
-            <Link href='/'><MovingButton/></Link>
+            <Link href='/'><MovingButton text="Contact Me"/></Link>
           </div>
         </div>
     )

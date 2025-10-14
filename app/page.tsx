@@ -1,6 +1,9 @@
+import EducationSection from "@/components/EducationSection/page";
 import ExperienceSection from "@/components/ExperienceSection/page";
 import HeroSection from "@/components/HeroSection/page";
+import Projects from "@/components/MyProjects/page";
 import Profile from "@/components/profile/page";
+import { InfiniteCards } from "@/components/SkillSection/page";
 
 export default function HomePage() {
   return (
@@ -14,6 +17,9 @@ export default function HomePage() {
       <div className="w-3/4 pr-20">
           <HeroSection />
           <ExperienceSection />
+          <Projects/>
+          <EducationSection/>
+          <InfiniteCards/>
       </div>
     </div>
   );

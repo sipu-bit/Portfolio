@@ -1,22 +1,22 @@
 'use client'
-import { IoBriefcaseOutline } from "react-icons/io5";
+import { FaGraduationCap } from "react-icons/fa6";
 import Heading1 from "../Headings/Heading1";
 import { ColorPicker } from "../ui/color";
 import Heading2 from "../Headings/Heading2";
 
-export default function ExperienceSection() {
+export default function EducationSection() {
 
     const testimonials = [
         {
-            role: "Software Development Engineer Intern",
-            duration: "July 2025-Present",
-            company: "Sparkradix Technology Pvt.Ltd",
+            role: "Master of Computer of Application",
+            duration: "2023-2025",
+            college: "Gandhi Engineering College,BBSR",
             desc: "As a Software Development Engineer Intern, I focus on designing and developing end-to-end web applications using the MERN stack. I work on building secure APIs, implementing dynamic user interfaces with React, managing databases with MongoDB, and deploying full-stack solutions. I collaborate with the team to solve real-world business challenges through efficient code and modern development practices."
         },
         {
-            role: "Full Stack Developer Intern",
-            duration: 'Sept 2024-Apr 2025',
-            company: "Tetratrion Technology Pvt.Ltd",
+            role: "Master of Computer of Application",
+            duration: '2020-2023',
+            college: "Bhanja College of Computer & Management",
             desc: "My role involved developing scalable backend APIs, integrating secure authentication systems, designing responsive front-end interfaces, and collaborating with cross-functional teams to deliver end-to-end solutions that enhanced user experience and performance."
         },
 
@@ -24,7 +24,7 @@ export default function ExperienceSection() {
     return (
         <div className="min-h-[60vh] flex flex-col gap-6 py-12">
             <div className="">
-                <Heading1 icon={IoBriefcaseOutline} text="Experience" />
+                <Heading1 icon={FaGraduationCap} text="Education" />
             </div>
             <div className="flex flex-col gap-6">
                 {testimonials.map((data, index) => (
@@ -33,7 +33,7 @@ export default function ExperienceSection() {
                         <div className="w-full flex justify-between ">
                             <div className="">
                                 <Heading2 text={data.role} />
-                                <h2 className="text-[#979595] font-semibold">{data.company}</h2>
+                                <h2 className="text-[#979595] font-semibold">{data.college}</h2>
                             </div>
                             <div className="w-auto h-10 rounded border border-[#515050] px-4 flex justify-center items-center bg-[#2e2e2e]" style={{color:ColorPicker.secondary}}>{data.duration}</div>
                         </div>
