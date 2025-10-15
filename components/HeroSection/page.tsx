@@ -47,7 +47,7 @@ export default function HeroSection() {
                 />
               <AOSWrapper duration={1200} easing="ease-out" once={true}><div data-aos="fade-up" className=""><Heading1 text="Based in Bhubaneswar,Odisha" className="text-4xl" /></div></AOSWrapper> 
                
-                   <AOSWrapper duration={1200} easing="ease-out" once={true}> <p data-aos="fade-up" className="leading-8 text-md text-justify" style={{ color: ColorPicker.secondary }}>👋 Hi, I'm Sipu Rana, a passionate Software Development Engineer specializing in the MERN stack (MongoDB, Express.js, React.js, Node.js).
+                   <AOSWrapper duration={1200} easing="ease-out" once={true}> <p data-aos="fade-up" className="leading-8 text-md text-justify" style={{ color: ColorPicker.secondary }}>👋 Hi,I'm Sipu Rana,a passionate Software Development Engineer specializing in the MERN stack(MongoDB, Express.js, React.js, Node.js).
                         I enjoy building scalable, secure, and user-focused web applications. I’ve worked on several real-time projects involving authentication systems, online transaction platforms, and product-based web apps.
                         Currently, I’m expanding my expertise with Next.js to develop high-performance, SEO-friendly applications with modern UI/UX design principles.</p></AOSWrapper>
                <AOSWrapper duration={1400} easing="ease-out" once={true}>
