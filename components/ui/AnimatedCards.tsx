@@ -14,11 +14,13 @@ const cardData = [
 
 export default function CardsSimple() {
   return (
-    <div className="w-full grid 2xl:grid-cols-2 mt-12 xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-16">
+    <div       
+ className="w-full grid 2xl:grid-cols-2 mt-12 xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-16">
       {cardData.map((card) => (
         <div
           key={card.id}
           style={{ backgroundColor: ColorPicker.bg }}
+          
           className="group relative 2xl:w-[450px] p-5  transition-transform duration-500 hover:translate-y-[-5px] border border-[#3e3e3e] rounded-lg xl:w-[350px] lg:w-[350px] md:w-[300px] w-full h-auto mx-auto cursor-pointer "
         >
           <div>

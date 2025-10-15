@@ -3,6 +3,8 @@ import { FaGraduationCap } from "react-icons/fa6";
 import Heading1 from "../Headings/Heading1";
 import { ColorPicker } from "../ui/color";
 import Heading2 from "../Headings/Heading2";
+import { motion,Variants } from 'framer-motion';
+import AOSWrapper from "../ui/FadeUp";
 
 export default function EducationSection() {
 
@@ -21,29 +23,51 @@ export default function EducationSection() {
         },
 
     ]
+    const containerVariants: Variants = {
+        hidden: {},
+        visible: {
+            transition: {
+                staggerChildren: 0.8,
+            },
+        },
+    };
+
+    const cardVariants: Variants = {
+        hidden: { opacity: 0, y: 60 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                duration: 0.8,
+                ease: [0.25, 0.1, 0.25, 1],
+            },
+        },
+    };
+
     return (
         <div className="min-h-[60vh] flex flex-col gap-6 py-12">
-            <div className="">
-                <Heading1 icon={FaGraduationCap} text="Education" />
-            </div>
-            <div className="flex flex-col gap-6">
+              <AOSWrapper duration={1200} easing="ease-out" once={true}><div data-aos="zoom-in" className=""><Heading1 text="Education" icon={FaGraduationCap} className="text-4xl" /></div></AOSWrapper> 
+            <motion.div variants={containerVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.4 }} className="flex flex-col gap-6">
                 {testimonials.map((data, index) => (
-                    <div className="p-3 rounded-lg border border-[#202020]" style={{backgroundColor:ColorPicker.bg}} key={index}>
+                    <motion.div variants={cardVariants} className="p-3 rounded-lg border border-[#202020]" style={{ backgroundColor: ColorPicker.bg }} key={index}>
 
                         <div className="w-full flex justify-between ">
                             <div className="">
                                 <Heading2 text={data.role} />
                                 <h2 className="text-[#979595] font-semibold">{data.college}</h2>
                             </div>
-                            <div className="w-auto h-10 rounded border border-[#515050] px-4 flex justify-center items-center bg-[#2e2e2e]" style={{color:ColorPicker.secondary}}>{data.duration}</div>
+                            <div className="w-auto h-10 rounded border border-[#515050] px-4 flex justify-center items-center bg-[#2e2e2e]" style={{ color: ColorPicker.secondary }}>{data.duration}</div>
                         </div>
                         <div className="w-full my-4 h-px bg-[#3e3e3e] content-none"></div>
                         <div className="">
                             <p className="text-[#605f5f]">{data.desc}</p>
                         </div>
-                    </div>
+                    </motion.div>
                 ))}
-            </div>
+            </motion.div>
         </div>
     )
 }

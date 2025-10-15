@@ -6,10 +6,13 @@ import { IoLogoGithub } from "react-icons/io5";
 import Link from "next/link";
 import MovingButton from "../ui/MovingButton";
 import { ColorPicker } from "../ui/color";
+import AOSWrapper from "../ui/FadeUp";
 
 export default function Profile(){
     return(
-        <div style={{backgroundColor:ColorPicker.bg}} className="text-white w-full border border-[#3e3e3e] rounded-xl h-auto pb-16">
+      <>
+      <AOSWrapper duration={1200} easing="ease-out" once={true}>
+        <div style={{backgroundColor:ColorPicker.bg}} data-aos="fade-up" className="text-white  border border-[#3e3e3e] rounded-xl h-auto pb-8">
           <div className="w-full p-4">
             <Image src='/my-image.jpg' alt="profile" width={100} height={100} className="w-full h-auto rounded-xl border border-[#3e3e3e]"/>
           </div>
@@ -27,5 +30,7 @@ export default function Profile(){
             <Link href='/'><MovingButton text="Contact Me"/></Link>
           </div>
         </div>
+        </AOSWrapper>
+        </>
     )
 }

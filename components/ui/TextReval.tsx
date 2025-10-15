@@ -1,63 +1,119 @@
-'use client';
+"use client";
+import React from "react";
+import { motion, Variants } from "framer-motion";
 
-import React from 'react';
-import { motion } from 'framer-motion';
-
-interface TextRevealProps {
+interface TitleAnimationProps {
   text: string;
   className?: string;
+  delay?: number;
+  lineDelay?: number;
+  stagger?: number;
+  duration?: number;
+
+  peakShadow?: string;
+  midBlur?: number;
+
+  blurStart?: number;
+  layer1?: string;
+  layer2?: string;
+  layer3?: string;
+
+  paddingBottom?: number;
 }
 
-const TextReveal: React.FC<TextRevealProps> = ({ text, className }) => {
-  const words = text.split(" ");
+const TextReveal: React.FC<TitleAnimationProps> = ({
+  text,
+  className = "",
+  delay = 0,
+  lineDelay = 0,
+  stagger = 0.08,          
+  duration = 0.6,    
+  peakShadow,
+  midBlur,
+  blurStart,
+  layer1,
+  layer2,
+  layer3,
+  paddingBottom = 0,
+}) => {
+  const letters = Array.from(text);
 
-  // Container animation variants
-  const containerVariants = {
-    hidden: { opacity: 0 },
+  const layerStack = ([layer1, layer2, layer3].filter(
+    (v): v is string => Boolean(v)
+  ) as string[]).join(", ");
+
+  const composedPeakShadow =
+    peakShadow ??
+    (layerStack ||
+      "0 28px 40px rgba(0,0,0,0.55), 0 14px 20px rgba(0,0,0,0.40), 0 6px 10px rgba(0,0,0,0.28)");
+
+  const midBlurPx = midBlur ?? blurStart ?? 8;
+
+  const containerVariants: Variants = {
+    hidden: {},
     visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.1 },
+      transition: {
+        delay: delay + lineDelay,
+        staggerChildren: stagger,
+      },
     },
   };
 
-  // Each word animation variants
-  const childVariants = {
+  // sync rise + shadow/blur peak at 50%
+  const childVariants: Variants = {
     hidden: {
       opacity: 0,
-      y: 20,
-      filter: "blur(10px)",
+      y: "1em",
+      color: "rgb(107,114,128)",
+      textShadow: "0 0 0 rgba(0,0,0,0)",
+      filter: "blur(0px)",
     },
     visible: {
-      opacity: 1,
-      y: 0,
-      filter: "blur(0px)",
+      y: ["1em", "0.25em", "0em"],
+      opacity: [0, 1, 1],
+      color: ["rgb(107,114,128)", "rgb(107,114,128)", "inherit"],
+      textShadow: [
+        "0 0 0 rgba(0,0,0,0)",
+        composedPeakShadow,
+        "0 0 0 rgba(0,0,0,0)",
+      ],
+      filter: ["blur(0px)", `blur(${midBlurPx}px)`, "blur(0px)"],
+      transition: {
+        duration,
+        ease: "easeOut",
+        times: [0, 0.5, 1], // ← peak at 50% makes it feel zippier
+      },
     },
   };
 
   return (
-    <div className={`flex items-center justify-center font-sans p-4 ${className || ""}`}>
-      <motion.div
-        style={{ display: "flex", flexWrap: "wrap", justifyContent: 'center' }}
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-        className="text-2xl font-bold text-center max-w-5xl leading-relaxed"
-      >
-        {words.map((word, index) => (
+    <motion.span
+      className={`inline-block font-bold ${className}`}
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+      style={{ overflow: "visible", willChange: "filter, transform, opacity" }}
+    >
+      {letters.map((char, i) => (
+        <span
+          key={i}
+          className="inline-block overflow-hidden align-baseline"
+          style={{ paddingBottom }}
+        >
           <motion.span
-            key={index}
             variants={childVariants}
-            transition={{
-              duration: 0.8,
-              ease: [0.25, 0.46, 0.45, 0.94],
+            style={{
+              display: "inline-block",
+              whiteSpace: "pre",
+              transform: "translateZ(0)",
+              willChange: "transform, opacity, text-shadow, filter, color",
             }}
-            style={{ marginRight: "12px", marginTop: "10px" }}
           >
-            {word}
+            {char}
           </motion.span>
-        ))}
-      </motion.div>
-    </div>
+        </span>
+      ))}
+    </motion.span>
   );
 };
 

@@ -1,28 +1,13 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { InfiniteMovingCards } from "../ui/infinite-moving-cards";
 import { FaLaptopCode } from "react-icons/fa";
 import Heading1 from "../Headings/Heading1";
+import AOSWrapper from "../ui/FadeUp";
 
 export function InfiniteCards() {
-    return (
-        <div className="relative overflow-hidden">
-            <div className="">
-                <Heading1 icon={FaLaptopCode} text="Tech Skills" />
-            </div>
-            <div className="mt-10">
-            <InfiniteMovingCards
-                items={testimonials}
-                direction="right"
-                speed="normal"
-            />
-            </div>
-        </div>
-    );
-}
-
-const testimonials = [
+    const testimonials1 = [
     {
         image: '/java-Photoroom.png'
     },
@@ -36,6 +21,52 @@ const testimonials = [
         image: '/mysql-Photoroom.png'
     },
     {
-        image: '/react-Photoroom.png'
+        image: '/js-Photoroom.png'
     }
 ];
+
+const testimonials2 = [
+    {
+        image: '/nodejs-Photoroom.png'
+    },
+    {
+        image: '/nextjs-Photoroom.png'
+    },
+    {
+        image: '/react-Photoroom.png'
+    },
+    {
+        image: '/express-Photoroom.png'
+    },
+    {
+        image: '/mongo-Photoroom.png'
+    },
+    {
+        image: '/tailwind-Photoroom.png'
+    }
+]
+
+    return (
+        <div className="relative overflow-hidden">
+            <div className="">
+              <AOSWrapper duration={1200} easing="ease-out" once={true}><div data-aos="fade-up" className=""><Heading1 text="Tech Stacks" icon={FaLaptopCode} className="text-4xl" /></div></AOSWrapper> 
+            </div>
+            <div className="mt-10">
+                <InfiniteMovingCards
+                    items={testimonials1}
+                    direction="right"
+                    speed="normal"
+                />
+            </div>
+            <div className="mt-10">
+                <InfiniteMovingCards
+                    items={testimonials2}
+                    direction="left"
+                    speed="normal"
+                />
+            </div>
+        </div>
+    );
+}
+
+
