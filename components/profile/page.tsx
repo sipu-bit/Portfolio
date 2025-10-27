@@ -13,9 +13,9 @@ export default function Profile(){
       <>
       <AOSWrapper duration={1200} easing="ease-out" once={true}>
         <div style={{backgroundColor:ColorPicker.bg}} data-aos="fade-up" className="text-white  border border-[#3e3e3e] rounded-xl h-auto pb-8">
-          <div className="w-full relative aspect-[4/3] sm:aspect-[5/4] md:aspect-[1/1] rounded-xl overflow-hidden border-b border-[#3e3e3e]">
+          <div className="w-full relative aspect-[4/3] sm:aspect-[5/4]  md:aspect-[1/1] overflow-hidden">
             <Image src='/my-image.jpg' alt="profile" fill sizes="(max-width: 768px) 100vw, 50vw"
-              className="object-cover rounded-xl"/>
+              className="object-cover rounded-xl p-4 border border-[#3e3e3e]"/>
           </div>
           <div className="w-full flex justify-center items-center">
             <h2 className="text-[#ece8e8] text-3xl">Sipu Rana</h2>
