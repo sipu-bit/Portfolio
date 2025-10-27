@@ -8,30 +8,64 @@ import MovingButton from "../ui/MovingButton";
 import { ColorPicker } from "../ui/color";
 import AOSWrapper from "../ui/FadeUp";
 
-export default function Profile(){
-    return(
-      <>
+export default function Profile() {
+  return (
+    <>
       <AOSWrapper duration={1200} easing="ease-out" once={true}>
-        <div style={{backgroundColor:ColorPicker.bg}} data-aos="fade-up" className="text-white  border border-[#3e3e3e] rounded-xl h-auto pb-8">
-          <div className="w-full relative aspect-[4/3] sm:aspect-[5/4]  md:aspect-[1/1] overflow-hidden">
-            <Image src='/my-image.jpg' alt="profile" fill sizes="(max-width: 768px) 100vw, 50vw"
-              className="object-cover rounded-xl p-4 border border-[#3e3e3e]"/>
+        <div
+          style={{ backgroundColor: ColorPicker.bg }}
+          data-aos="fade-up"
+          className="text-white border 2xl:mt-0 xl:mt-0 lg:mt-0 md:mt-8 mt-8 border-[#3e3e3e] rounded-xl h-auto pb-8"
+        >
+          {/* ✅ Responsive Image Section */}
+          <div className="w-full flex justify-center items-center p-4">
+            <div className="relative w-full max-w-[300px] sm:max-w-[350px] md:max-w-[400px] lg:max-w-[450px] aspect-square">
+              <Image
+                src="/my-image.jpg"
+                alt="profile"
+                fill
+                priority
+                className="object-cover rounded-xl border border-[#3e3e3e]"
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 60vw, 400px"
+              />
+            </div>
           </div>
+
+          {/* Name */}
           <div className="w-full flex justify-center items-center">
-            <h2 className="text-[#ece8e8] text-3xl">Sipu Rana</h2>
+            <h2 className="text-[#ece8e8] text-3xl font-semibold">Sipu Rana</h2>
           </div>
-          <div className="w-full flex justify-center items-center py-6 gap-7">
-            <span className="p-2 border border-[#3e3e3e] rounded-lg"><TbBrandLinkedin  className="w-5 h-5 text-[#ece8e8] "/></span>
-            <span className="p-2 border border-[#3e3e3e] rounded-lg"><FaInstagram  className="w-5 h-5 text-[#ece8e8]"/></span>
-            <span className="p-2 border border-[#3e3e3e] rounded-lg"><LuFacebook  className="w-5 h-5 text-[#ece8e8]"/></span>
-             <span className="p-2 border border-[#3e3e3e] rounded-lg"><IoLogoGithub className="w-5 h-5 text-[#ece8e8]"/></span>
+
+          {/* Social Icons */}
+          <div className="w-full flex justify-center items-center py-6 gap-6 flex-wrap">
+            <Link href="https://www.linkedin.com/in/sipu-rana-72b56b242/" className="p-2 border border-[#3e3e3e] rounded-lg hover:bg-[#3e3e3e]/50 transition">
+              <TbBrandLinkedin className="w-5 h-5 text-[#ece8e8]" />
+            </Link>
+            <Link href="https://www.instagram.com/sagar_sipu_07/" className="p-2 border border-[#3e3e3e] rounded-lg hover:bg-[#3e3e3e]/50 transition">
+              <FaInstagram className="w-5 h-5 text-[#ece8e8]" />
+            </Link>
+            <Link href="https://www.facebook.com/profile.php?id=100075259404065" className="p-2 border border-[#3e3e3e] rounded-lg hover:bg-[#3e3e3e]/50 transition">
+              <LuFacebook className="w-5 h-5 text-[#ece8e8]" />
+            </Link>
+            <Link href="https://github.com/Sipu-982?tab=repositories" className="p-2 border border-[#3e3e3e] rounded-lg hover:bg-[#3e3e3e]/50 transition">
+              <IoLogoGithub className="w-5 h-5 text-[#ece8e8]" />
+            </Link>
           </div>
-          <div className="flex gap-2 justify-center pt-6 items-center">
-            <Link href='/' className="py-2 px-6 bg-[#3e3e3e] rounded-md">DownLoad CV</Link>
-            <Link href='/'><MovingButton text="Contact Me"/></Link>
+
+          {/* Buttons */}
+          <div className="flex gap-3 justify-center pt-6 items-center flex-wrap">
+            <Link
+              href="/"
+              className="py-2 px-6 bg-[#3e3e3e] rounded-md hover:bg-[#505050] transition"
+            >
+              Download CV
+            </Link>
+            <Link href="/">
+              <MovingButton text="Contact Me" />
+            </Link>
           </div>
         </div>
-        </AOSWrapper>
-        </>
-    )
+      </AOSWrapper>
+    </>
+  );
 }

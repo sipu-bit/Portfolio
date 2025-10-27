@@ -23,7 +23,7 @@ export default function HomePage() {
       <div className="flex 2xl:flex-row xl:flex-row lg:flex-row flex-col justify-between gap-20 2xl:mx-12 xl:mx-12 lg:mx-12 mx-3"> 
         {/* Added bottom margin to ensure footer spacing */}
         <div className="2xl:w-1/3 xl:w-1/3 lg:w-1/3 w-full relative">
-          <div className="2xl:sticky xl:sticky lg:sticky static 2xl:top-10 xl:top-10 lg:top-10 top-2 h-auto">
+          <div className="2xl:sticky xl:sticky lg:sticky static 2xl:top-10 xl:top-10 lg:top-10 top-14 h-auto">
             <Profile />
           </div>
         </div>
