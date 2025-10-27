@@ -12,7 +12,7 @@ const cardData = [
 
 export default function Projects() {
   return (
-    <section className="w-full bg-black py-4 -px-10">
+    <section className="w-full py-4 -px-10">
       <div className="py-4">
               <Heading1 text="My Projects" className="text-4xl"  />
       </div>
