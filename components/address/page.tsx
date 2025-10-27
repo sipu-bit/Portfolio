@@ -12,7 +12,7 @@ export default function Address(){
     ]
     return(
         <AOSWrapper duration={1200} once={true} easing="ease-out">
-        <div data-aos="zoom-in" className="w-1/2">
+        <div data-aos="zoom-in" className="2xl:w-1/2 xl:w-1/2 lg:w-1/2 md:w-1/2 w-full">
            {infos.map((items,index)=>(
             <div className="w-full  px-3 h-18 rounded-lg flex gap-6 items-center mt-4" key={index} style={{backgroundColor:ColorPicker.bg}}>
                 <div className="">

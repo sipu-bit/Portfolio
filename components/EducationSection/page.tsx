@@ -54,7 +54,7 @@ export default function EducationSection() {
                 {testimonials.map((data, index) => (
                     <motion.div variants={cardVariants} className="p-3 rounded-lg border border-[#202020]" style={{ backgroundColor: ColorPicker.bg }} key={index}>
 
-                        <div className="w-full flex justify-between ">
+                        <div className="w-full flex 2xl:flex-row xl:flex-row lg:flex-row md:flex-row flex-col gap-2 justify-between">
                             <div className="">
                                 <Heading2 text={data.role} />
                                 <h2 className="text-[#979595] font-semibold">{data.college}</h2>

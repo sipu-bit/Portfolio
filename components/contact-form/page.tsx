@@ -6,7 +6,7 @@ import AOSWrapper from "../ui/FadeUp";
 
 export default function ContactForm() {
   return (
-    <form className="w-1/2">
+    <form className="2xl:w-1/2 xl:w-1/2 lg:w-1/2 md:w-1/2 w-full">
       <AOSWrapper duration={1400} easing="ease-out" once={false}>
         <div data-aos="fade-up">
           {/* Name Field */}

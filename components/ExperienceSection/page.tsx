@@ -61,7 +61,7 @@ export default function ExperienceSection() {
                         className="p-3 rounded-lg border border-[#202020]"
                         style={{ backgroundColor: ColorPicker.bg }}
                     >
-                        <div className="w-full flex justify-between">
+                        <div className="w-full flex 2xl:flex-row xl:flex-row lg:flex-row md:flex-row flex-col gap-2 justify-between">
                             <div>
                                 <Heading2 text={data.role} />
                                 <h2 className="text-[#979595] font-semibold">{data.company}</h2>

@@ -10,15 +10,15 @@ import { InfiniteCards } from "@/components/SkillSection/page";
 export default function HomePage() {
   return (
     <div className="w-full min-h-screen flex flex-col">
-      <div className="flex justify-between gap-20 mx-12"> 
+      <div className="flex 2xl:flex-row xl:flex-row lg:flex-row flex-col justify-between gap-20 2xl:mx-12 xl:mx-12 lg:mx-12 mx-3"> 
         {/* Added bottom margin to ensure footer spacing */}
-        <div className="w-1/3 relative">
-          <div className="sticky top-10 h-fit">
+        <div className="2xl:w-1/3 xl:w-1/3 lg:w-1/3 w-full relative">
+          <div className="2xl:sticky xl:sticky lg:sticky static 2xl:top-10 xl:top-10 lg:top-10 top-2 h-auto">
             <Profile />
           </div>
         </div>
 
-        <div className="w-2/3">
+        <div className="2xl:w-2/3 xl:w-2/3 lg:w-2/3 w-full flex flex-col gap-10">
           <HeroSection />
           <ExperienceSection />
           <Projects />
