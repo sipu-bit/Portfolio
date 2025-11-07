@@ -1,7 +1,7 @@
 "use client";
 
 import TypewriterEffect from "@/components/ui/TypeWritting";
-import { ColorPicker } from "@/components/ui/color";
+import { ColorPicker } from "@/styles/color";
 import Heading1 from "../Headings/Heading1";
 import TextReveal from "../ui/TextReval";
 import AOSWrapper from "../ui/FadeUp";

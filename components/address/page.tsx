@@ -1,7 +1,7 @@
 import { BiPhoneCall } from "react-icons/bi";
 import { IoIosMail } from "react-icons/io";
 import { FaMapMarkerAlt } from "react-icons/fa";
-import { ColorPicker } from "../ui/color";
+import { ColorPicker } from "../../styles/color";
 import AOSWrapper from "../ui/FadeUp";
 
 export default function Address(){

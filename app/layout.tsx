@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import LenisProvider from "@/components/provider/LenisProvider";
+// import SmoothScroll from "@/components/provider/LenisProvider";
 // import Footer from "@/components/footer/page";
 
 const geistSans = Geist({
@@ -28,7 +30,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-clip w-full`}
       >
+        <LenisProvider>
         {children}
+        </LenisProvider>
       </body>
 
     </html>

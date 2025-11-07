@@ -1,5 +1,5 @@
 import React from 'react';
-import { ColorPicker } from '../ui/color';
+import { ColorPicker } from '../../styles/color';
 import { IconType } from 'react-icons';
 
 interface HeadingProps {

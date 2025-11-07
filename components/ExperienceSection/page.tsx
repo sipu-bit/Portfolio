@@ -3,7 +3,7 @@
 import { IoBriefcaseOutline } from "react-icons/io5";
 import Heading1 from "../Headings/Heading1";
 import Heading2 from "../Headings/Heading2";
-import { ColorPicker } from "../ui/color";
+import { ColorPicker } from "../../styles/color";
 import { motion, Variants } from "framer-motion";
 import AOSWrapper from "../ui/FadeUp";
 

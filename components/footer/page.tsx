@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ColorPicker } from "../ui/color";
+import { ColorPicker } from "../../styles/color";
 import { TbBrandLinkedin } from "react-icons/tb";
 import { FaInstagram } from "react-icons/fa6";
 import { LuFacebook } from "react-icons/lu";

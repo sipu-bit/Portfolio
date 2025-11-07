@@ -7,7 +7,7 @@ import AOSWrapper from "../ui/FadeUp";
 
 export default function ContactSection() {
     return (
-        <div className="min-h-[50vh] py-12">
+        <div id="contact" className="min-h-[50vh] py-12">
               <AOSWrapper duration={1200} easing="ease-out" once={true}><div data-aos="zoom-in" className=""><Heading1 text="Contact" icon={FaRegPaperPlane} className="text-4xl" /></div></AOSWrapper> 
               <AOSWrapper duration={1200} easing="ease-out" once={true}><div data-aos="zoom-in" className=""><Heading2 text="Get In Touch" /></div></AOSWrapper> 
             <div className="w-full flex 2xl:flex-row xl:flex-row lg:flex-row md:flex-row flex-col gap-6">

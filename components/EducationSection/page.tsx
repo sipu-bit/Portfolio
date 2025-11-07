@@ -1,7 +1,7 @@
 'use client'
 import { FaGraduationCap } from "react-icons/fa6";
 import Heading1 from "../Headings/Heading1";
-import { ColorPicker } from "../ui/color";
+import { ColorPicker } from "../../styles/color";
 import Heading2 from "../Headings/Heading2";
 import { motion,Variants } from 'framer-motion';
 import AOSWrapper from "../ui/FadeUp";

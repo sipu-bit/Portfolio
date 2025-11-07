@@ -5,7 +5,7 @@ import { LuFacebook } from "react-icons/lu";
 import { IoLogoGithub } from "react-icons/io5";
 import Link from "next/link";
 import MovingButton from "../ui/MovingButton";
-import { ColorPicker } from "../ui/color";
+import { ColorPicker } from "../../styles/color";
 import AOSWrapper from "../ui/FadeUp";
 
 export default function Profile() {
@@ -55,12 +55,12 @@ export default function Profile() {
           {/* Buttons */}
           <div className="flex gap-3 justify-center pt-6 items-center flex-wrap">
             <Link
-              href="/"
+              href="./my latest resume.pdf"
               className="py-2 px-6 bg-[#3e3e3e] rounded-md hover:bg-[#505050] transition"
             >
               Download CV
             </Link>
-            <Link href="/">
+            <Link href="#contact">
               <MovingButton text="Contact Me" />
             </Link>
           </div>

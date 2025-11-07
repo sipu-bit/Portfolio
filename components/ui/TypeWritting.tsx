@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { ColorPicker } from "./color";
+import { ColorPicker } from "../../styles/color";
 
 interface TypewriterEffectProps {
   textList: string[]; // multiple texts
