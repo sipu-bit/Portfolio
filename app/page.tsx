@@ -12,15 +12,15 @@ import GreenGlowLine from "@/components/ui/GlowingLine";
 export default function HomePage() {
   return (
     <div className="w-full  inset-0 z-0 min-h-screen flex flex-col" style={{
-      background: "#000000",
+      background: "#020617",
       backgroundImage: `
-        radial-gradient(circle at 1px 1px, rgba(139, 92, 246, 0.2) 1px, transparent 0),
-        radial-gradient(circle at 1px 1px, rgba(59, 130, 246, 0.18) 1px, transparent 0),
-        radial-gradient(circle at 1px 1px, rgba(236, 72, 153, 0.15) 1px, transparent 0)
+        linear-gradient(to right, rgba(71,85,105,0.3) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(71,85,105,0.3) 1px, transparent 1px),
+        radial-gradient(circle at 50% 50%, rgba(139,92,246,0.15) 0%, transparent 70%)
       `,
-      backgroundSize: "20px 20px, 30px 30px, 25px 25px",
-      backgroundPosition: "0 0, 10px 10px, 15px 5px",
+      backgroundSize: "32px 32px, 32px 32px, 100% 100%",
     }}>
+      
 <GreenGlowLine className="fixed top-0 z-50" orientation="horizontal" side="top" />
 <GreenGlowLine className="fixed left-0 z-50" orientation="vertical" side="left" />
 <GreenGlowLine className="fixed right-0 z-50" orientation="vertical" side="right" />
