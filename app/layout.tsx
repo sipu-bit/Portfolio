@@ -1,10 +1,8 @@
+
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import LenisProvider from "@/components/provider/LenisProvider";
-import SplashCursor from "@/components/SplashCursor";
-// import SmoothScroll from "@/components/provider/LenisProvider";
-// import Footer from "@/components/footer/page";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,7 +32,6 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-clip w-full`}
       >
-        <SplashCursor/>
         <LenisProvider>
         {children}
         </LenisProvider>
