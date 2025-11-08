@@ -9,7 +9,7 @@ import FlipIconButton from "../ui/FlipedButton";
 
 export default function Footer() {
     return (
-        <div style={{ backgroundColor: ColorPicker.bg }} className="w-full flex 2xl:flex-row xl:flex-row lg:flex-row md:flex-row flex-col 2xl:justify-between xl:justify-between lg:justify-between md:justify-around justify-start items-center 2xl:px-16 xl:px-14 lg:px-16  px-4 py-6 h-auto text-[#8d8b8b]">
+        <div style={{ backgroundColor: ColorPicker.bg }} className="w-full flex 2xl:flex-row xl:flex-row lg:flex-row md:flex-row flex-col 2xl:justify-between xl:justify-between lg:justify-between md:justify-around justify-start items-center 2xl:px-16 xl:px-14 lg:px-16  px-4 py-2 h-auto text-[#8d8b8b]">
             <div className="flex items-center gap-3">
                 <Image src='/my-image.jpg' alt="profile" width={50} height={50} className="object-contain rounded-full" />
                 <h2>Sipu Rana</h2>
