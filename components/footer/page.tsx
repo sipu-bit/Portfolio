@@ -5,6 +5,7 @@ import { FaInstagram } from "react-icons/fa6";
 import { LuFacebook } from "react-icons/lu";
 import { IoLogoGithub } from "react-icons/io5";
 import Link from "next/link";
+import FlipIconButton from "../ui/FlipedButton";
 
 export default function Footer() {
     return (
@@ -14,19 +15,20 @@ export default function Footer() {
                 <h2>Sipu Rana</h2>
             </div>
             <div className="flex py-6 gap-7">
-                <Link href="https://www.linkedin.com/in/sipu-rana-72b56b242/" className="p-2 border border-[#3e3e3e] rounded-lg hover:bg-[#3e3e3e]/50 transition">
-                    <TbBrandLinkedin className="w-5 h-5 text-[#ece8e8]" />
-                </Link>
-                <Link href="https://www.instagram.com/sagar_sipu_07/" className="p-2 border border-[#3e3e3e] rounded-lg hover:bg-[#3e3e3e]/50 transition">
-                    <FaInstagram className="w-5 h-5 text-[#ece8e8]" />
-                </Link>
-                <Link href="https://www.facebook.com/profile.php?id=100075259404065" className="p-2 border border-[#3e3e3e] rounded-lg hover:bg-[#3e3e3e]/50 transition">
-                    <LuFacebook className="w-5 h-5 text-[#ece8e8]" />
-                </Link>
-                <Link href="https://github.com/Sipu-982?tab=repositories" className="p-2 border border-[#3e3e3e] rounded-lg hover:bg-[#3e3e3e]/50 transition">
-                    <IoLogoGithub className="w-5 h-5 text-[#ece8e8]" />
-                </Link>          </div>
-            <div className=""><Link href='/'>Contact Me</Link></div>
+                 <Link href="https://www.linkedin.com/in/sipu-rana-72b56b242/" className="p-2 border border-[#3e3e3e] rounded-lg hover:bg-[#3e3e3e]/50 transition">
+              <FlipIconButton frontIcon={<TbBrandLinkedin size={20} />} backIcon={<TbBrandLinkedin size={20} />} />
+            </Link>
+            <Link href="https://www.instagram.com/sagar_sipu_07/" className="p-2 border border-[#3e3e3e] rounded-lg hover:bg-[#3e3e3e]/50 transition">
+              <FlipIconButton frontIcon={<FaInstagram size={20} />} backIcon={<FaInstagram size={20} />} />
+            </Link>
+            <Link href="https://www.facebook.com/profile.php?id=100075259404065" className="p-2 border border-[#3e3e3e] rounded-lg hover:bg-[#3e3e3e]/50 transition">
+              <FlipIconButton frontIcon={<LuFacebook size={20} />} backIcon={<LuFacebook size={20} />} />
+            </Link>
+            <Link href="https://github.com/Sipu-982?tab=repositories" className="p-2 border border-[#3e3e3e] rounded-lg hover:bg-[#3e3e3e]/50 transition">
+              <FlipIconButton frontIcon={<IoLogoGithub size={20} />} backIcon={<IoLogoGithub size={20} />} />
+            </Link>
+                 </div>
+            <div className=""><Link href='/'><FlipIconButton frontText="Contact Me" backText="Contact Me"/></Link></div>
         </div>
     )
 }

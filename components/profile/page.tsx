@@ -7,6 +7,7 @@ import Link from "next/link";
 import MovingButton from "../ui/MovingButton";
 import { ColorPicker } from "../../styles/color";
 import AOSWrapper from "../ui/FadeUp";
+import FlipIconButton from "../ui/FlipedButton";
 
 export default function Profile() {
   return (
@@ -17,7 +18,6 @@ export default function Profile() {
           data-aos="fade-up"
           className="text-white border 2xl:mt-0 xl:mt-0 lg:mt-0 md:mt-8 mt-8 border-[#3e3e3e] rounded-xl h-auto pb-8"
         >
-          {/* ✅ Responsive Image Section */}
           <div className="w-full flex justify-center items-center p-4">
             <div className="relative w-full max-w-[300px] sm:max-w-[350px] md:max-w-[400px] lg:max-w-[450px] aspect-square">
               <Image
@@ -39,16 +39,16 @@ export default function Profile() {
           {/* Social Icons */}
           <div className="w-full flex justify-center items-center py-6 gap-6 flex-wrap">
             <Link href="https://www.linkedin.com/in/sipu-rana-72b56b242/" className="p-2 border border-[#3e3e3e] rounded-lg hover:bg-[#3e3e3e]/50 transition">
-              <TbBrandLinkedin className="w-5 h-5 text-[#ece8e8]" />
+              <FlipIconButton frontIcon={<TbBrandLinkedin size={20} />} backIcon={<TbBrandLinkedin size={20} />} />
             </Link>
             <Link href="https://www.instagram.com/sagar_sipu_07/" className="p-2 border border-[#3e3e3e] rounded-lg hover:bg-[#3e3e3e]/50 transition">
-              <FaInstagram className="w-5 h-5 text-[#ece8e8]" />
+              <FlipIconButton frontIcon={<FaInstagram size={20} />} backIcon={<FaInstagram size={20} />} />
             </Link>
             <Link href="https://www.facebook.com/profile.php?id=100075259404065" className="p-2 border border-[#3e3e3e] rounded-lg hover:bg-[#3e3e3e]/50 transition">
-              <LuFacebook className="w-5 h-5 text-[#ece8e8]" />
+              <FlipIconButton frontIcon={<LuFacebook size={20} />} backIcon={<LuFacebook size={20} />} />
             </Link>
             <Link href="https://github.com/Sipu-982?tab=repositories" className="p-2 border border-[#3e3e3e] rounded-lg hover:bg-[#3e3e3e]/50 transition">
-              <IoLogoGithub className="w-5 h-5 text-[#ece8e8]" />
+              <FlipIconButton frontIcon={<IoLogoGithub size={20} />} backIcon={<IoLogoGithub size={20} />} />
             </Link>
           </div>
 
@@ -58,7 +58,7 @@ export default function Profile() {
               href="./my latest resume.pdf"
               className="py-2 px-6 bg-[#3e3e3e] rounded-md hover:bg-[#505050] transition"
             >
-              Download CV
+             <FlipIconButton frontText=" Download CV" backText=" Download CV" />
             </Link>
             <Link href="#contact">
               <MovingButton text="Contact Me" />

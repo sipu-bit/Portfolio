@@ -1,6 +1,7 @@
 'use client';
 
 import Image from "next/image";
+import Link from "next/link";
 import { GoArrowUpRight } from "react-icons/go";
 
 interface AnimatedCardProps {
@@ -38,13 +39,13 @@ export default function AnimatedCard({ image, title, desc, link }: AnimatedCardP
         <p className="text-gray-300 text-sm">{desc}</p>
 
         {link && (
-          <a href={link} target="_blank" rel="noopener noreferrer">
+          <Link href={link} target="_blank" rel="noopener noreferrer">
             <div className="mt-5 flex justify-end">
               <div className="w-10 h-10 flex justify-center items-center rounded-full bg-[#2b2b2b] group-hover:bg-red-600 transition-colors duration-500">
                 <GoArrowUpRight size={22} className="text-white" />
               </div>
             </div>
-          </a>
+          </Link>
         )}
       </div>
     </div>

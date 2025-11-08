@@ -4,9 +4,9 @@ import AnimatedCard from "@/components/ui/AnimatedCards";
 import Heading1 from "../Headings/Heading1";
 
 const cardData = [
-  { id: 1, image: "/netflix-app.jpg", title: "Netflix Clone", desc: "Full Stack Web Application", link: "#" },
+  { id: 1, image: "/netflix-app.jpg", title: "Netflix Clone", desc: "Full Stack Web Application", link: "https://netflix-frontend-jade.vercel.app/" },
   { id: 2, image: "/flipkart.jpg", title: "E-Commerce", desc: "Full Stack Web Application", link: "#" },
-  { id: 3, image: "/solar-web.jpg", title: "Solar Enterprises", desc: "Full Stack E-Commerce Application", link: "#" },
+  { id: 3, image: "/todo-list.jpg", title: "TODO List", desc: "Full Stack TODO List Application", link: "#" },
   { id: 4, image: "/CRUD.jpg", title: "CRUD Application", desc: "Full Stack Web Application", link: "#" },
 ];
 
