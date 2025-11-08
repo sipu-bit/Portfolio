@@ -25,6 +25,7 @@ export default function HomePage() {
         <GreenGlowLine className="fixed top-0 z-50" orientation="horizontal" side="top" />
         <GreenGlowLine className="fixed left-0 z-50" orientation="vertical" side="left" />
         <GreenGlowLine className="fixed right-0 z-50" orientation="vertical" side="right" />
+        <GreenGlowLine className="fixed bottom-0 z-50" orientation="horizontal" side="bottom" />
 
         <div className="flex 2xl:flex-row xl:flex-row lg:flex-row flex-col justify-between gap-20 2xl:mx-12 xl:mx-12 lg:mx-12 mx-3">
           {/* Profile stays sticky again */}

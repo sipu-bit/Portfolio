@@ -18,10 +18,9 @@ const GreenGlowLine: React.FC<GreenGlowLineProps> = ({
 }) => {
   const isVertical = orientation === "vertical";
   const containerClasses = isVertical
-    ? "absolute w-px h-full"
+    ? "absolute w-px h-full 2xl:block xl:block lg:block md:block hidden"
     : "absolute w-full h-px";
 
-  // ✅ Correct positioning logic
   const positionStyle: React.CSSProperties = isVertical
     ? side === "right"
       ? { right: position }
